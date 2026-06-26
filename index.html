@@ -4,375 +4,377 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio – Ayesha Ramzan</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-        }
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        html,
-        body {
-            width: 100%;
-            overflow-x: hidden;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            background: pink;
-            color: rgb(79, 32, 114);
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* ── NAVBAR ── */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 32px;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .logo {
-            font-size: clamp(1.8rem, 5vw, 3rem);
-            color: rgb(102, 12, 147);
-            font-weight: bold;
-        }
-
-        .navbar ul {
-            display: flex;
-            gap: 10px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            flex-wrap: wrap;
-        }
-
-        .navbar ul li button {
-            padding: 10px 22px;
-            border-radius: 8px;
-            border: 2px solid rgb(102, 12, 147);
-            background: white;
-            cursor: pointer;
-            font-size: clamp(0.8rem, 1.4vw, 1rem);
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            color: rgb(79, 32, 114);
-            transition: background 0.3s;
-        }
-
-        .navbar ul li button:hover {
-            background-color: rgb(255, 174, 187);
-        }
-
-        .navbar ul li button:hover a {
-            color: rgb(95, 161, 44);
-        }
-
-        /* ── HERO SECTION ── */
-        .hero {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 48px;
-            padding: 60px 40px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .pic {
-            width: 260px;
-            height: 260px;
-            object-fit: cover;
-            border-radius: 20px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-            transition: box-shadow 0.3s;
-            flex-shrink: 0;
-        }
-
-        .pic:hover {
-            box-shadow: 0 8px 24px rgba(82, 48, 48, 0.7);
-        }
-
-        .intro-text {
-            max-width: 560px;
-        }
-
-        .intro-text h1 {
-            font-size: clamp(1.2rem, 2.5vw, 1.7rem);
-            color: rgb(79, 32, 114);
-            margin: 6px 0;
-            line-height: 1.4;
-        }
-
-        .intro-text p {
-            font-size: clamp(0.85rem, 1.4vw, 0.98rem);
-            color: rgb(79, 32, 114);
-            line-height: 1.9;
-            margin-top: 14px;
-        }
-
-        /* ── SOCIAL ICONS ── */
-        .icon {
-            display: flex;
-            gap: 16px;
-            align-items: center;
-            margin-top: 20px;
-        }
-
-        .icon img {
-            width: 34px;
-            height: 34px;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        .icon img:hover {
-            transform: scale(1.18);
-        }
-
-        /* ── CV LINK ── */
-        .footer {
-            margin-top: 18px;
-        }
-
-        .footer p {
-            font-size: 0.95rem;
-            color: green;
-            margin: 0;
-        }
-
-        .cv-a {
-            text-decoration: underline;
-            color: green;
-        }
-
-        .cv-a:hover {
-            color: orange;
-        }
-
-        /* ── ABOUT SECTION ── */
-        .about {
-            position: relative;
-            max-width: 1000px;
-            margin: 70px auto;
-            padding: 60px 48px;
-            overflow: hidden;
-        }
-
-        /* Mint rectangle behind About */
-        .about::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, #fdfdfd, #f0fffb);
-            
-            border-radius: 28px;
-            z-index: -1;
-        }
-
-        .about h1 {
-            font-size: clamp(1.4rem, 3vw, 2rem);
-            margin-bottom: 8px;
-        }
-
-        /* inner layout: image left, content right */
-        .about-inner {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            align-items: flex-start;
-            margin-top: 30px;
-        }
-
-        .pic2 {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-            flex-shrink: 0;
-        }
-
-        .about-content {
-            flex: 1;
-            min-width: 220px;
-        }
-
-        .about-content p {
-            font-size: clamp(0.85rem, 1.4vw, 0.97rem);
-            line-height: 1.9;
-            margin: 0 0 28px;
-        }
-
-        /* ── STATS ── */
-        .stats {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 28px;
-            justify-content: flex-start;
-            margin-bottom: 28px;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-item h1 {
-            font-size: clamp(1.6rem, 3.5vw, 2.2rem);
-            margin: 0;
-        }
-
-        .stat-item h2 {
-            font-size: clamp(0.75rem, 1.3vw, 0.9rem);
-            font-weight: normal;
-            margin: 4px 0 0;
-        }
-
-        /* ── LANGUAGES ── */
-        .languages {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .languages button {
-            padding: 8px 18px;
-            font-size: 0.88rem;
-            border-radius: 8px;
-            border: 2px solid rgb(79, 32, 114);
-            background: white;
-            color: rgb(79, 32, 114);
-            cursor: pointer;
-            font-family: Verdana, sans-serif;
-            transition: background 0.3s, color 0.3s;
-            height: auto;
-            width: auto;
-            margin: 0;
-        }
-
-        .languages button:hover {
-            background-color: rgb(79, 32, 114);
-            color: white;
-        }
-
-        /* ── CONTACT SECTION ── */
-        .contact {
-            text-align: center;
-            padding: 9px 20px 80px;
-        }
-
-        .contact h1 {
-            font-size: clamp(1.6rem, 4vw, 2.5rem);
-            margin-bottom: 8px;
-        }
-
-        .contact-text {
-            font-size: clamp(0.88rem, 1.5vw, 1rem);
-            color: #555;
-            margin-bottom: 10px;
-        }
-
-        .contact-cards {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 28px;
-            margin-top: 36px;
-        }
-
-        .contact-card {
-            background: #fff;
-            width: 240px;
-            padding: 32px 20px;
-            border-radius: 16px;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s, transform 0.3s;
-        }
-
-        .contact-card:hover {
-            box-shadow: 0 8px 22px rgba(255, 174, 187, 0.7);
-            transform: translateY(-4px);
-        }
-
-        .contact-card i {
-            font-size: 2rem;
-            color: #ff6fa3;
-            margin-bottom: 10px;
-        }
-
-        .contact-card h3 {
-            font-size: 1.1rem;
-            margin: 8px 0 6px;
-            color: rgb(79, 32, 114);
-        }
-
-        .contact-card p {
-            font-size: 0.88rem;
-            color: #555;
-            margin: 0;
-            word-break: break-word;
-        }
-
-        /* ── RESPONSIVE ── */
-        @media (max-width: 640px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding: 40px 20px;
-            }
-
-            .icon {
-                justify-content: center;
-            }
-
-            .about {
-                padding: 40px 20px;
-                margin: 40px 16px;
-            }
-
-            .about-inner {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .stats {
-                justify-content: center;
-            }
-
-            .languages {
-                justify-content: center;
-            }
-        }
-    </style>
 </head>
+<style>
+    html,
+    body {
+        width: 100%;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: "Poppins", sans-serif;
+        background: pink;
+        color: rgb(79, 32, 114);
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* ── NAVBAR ── */
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: clamp(1.8rem, 5vw, 3rem);
+        color: rgb(102, 12, 147);
+        /* font-weight: bold;? */
+        margin-bottom: 15px;
+        margin-top: 27px;
+    }
+
+    .nav-links {
+        display: flex;
+        width: 100%;
+        margin-top: 13px;
+
+    }
+
+    .nav-links button {
+        flex: 1;
+        height: 67px;
+        background: #e9e9e9;
+        border: 1px solid #7a7a7a;
+        border-right: none;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    .nav-links button:last-child {
+        border-right: 1px solid #7a7a7a;
+    }
+
+    .nav-links button a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: rgb(79, 32, 114);
+        /* Purple text */
+        font-size: 21px;
+        transition: color 0.3s;
+    }
+
+    /* Hover effect */
+    .nav-links button:hover {
+        background: #e9e9e9;
+        /* Keep background the same */
+    }
+
+    .nav-links button:hover a {
+        color: green;
+
+        font-size: 23px;
+        transition: color 0.3s;
+        /* Text turns green */
+    }
+
+    /* ── HERO SECTION ── */
+    .hero {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 48px;
+        padding: 60px 40px;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .pic {
+        width: 260px;
+        height: 260px;
+        object-fit: cover;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        transition: box-shadow 0.3s;
+        flex-shrink: 0;
+    }
+
+
+
+    .intro-text {
+        max-width: 560px;
+        margin-top: 23px;
+    }
+
+    .intro-text h1 {
+        font-size: 21px;
+        color: rgb(79, 32, 114);
+
+    }
+
+    .intro-text p {
+        font-size: 16px;
+        color: rgb(79, 32, 114);
+        line-height: 1.6;
+        margin-top: -5px;
+    }
+
+    /* ── SOCIAL ICONS ── */
+    .icon {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .icon img {
+        width: 34px;
+        height: 34px;
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+
+    .icon img:hover {
+        transform: scale(1.18);
+    }
+
+    /* ── CV LINK ── */
+    .footer {
+        margin-top: 18px;
+    }
+
+    .footer p {
+        font-size: 0.95rem;
+        color: green;
+        margin: 0;
+    }
+
+    .cv-a {
+        text-decoration: underline;
+        color: green;
+    }
+
+    .cv-a:hover {
+        color: rgb(84, 55, 112);
+    }
+
+    /* ── ABOUT SECTION ── */
+    .about {
+        position: relative;
+        max-width: 1000px;
+        margin: 70px auto;
+        padding: 60px 48px;
+        overflow: hidden;
+    }
+
+
+    .about h1 {
+        font-size: 27px;
+        margin-top: -56px;
+    }
+
+    /* inner layout: image left, content right */
+    .about-inner {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        align-items: flex-start;
+        margin-top: 30px;
+    }
+
+    .pic2 {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        flex-shrink: 0;
+    }
+
+    .about-content {
+        flex: 1;
+        min-width: 220px;
+    }
+
+    .about-content p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin: 0 0 28px;
+    }
+
+    /* ── STATS ── */
+    .stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 89px;
+        justify-content: flex-start;
+        margin-bottom: 28px;
+    }
+
+    .stat-item {
+        text-align: center;
+    }
+
+    .stat-item h1 {
+        font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+        margin: 0;
+    }
+
+    .stat-item h2 {
+        font-size: clamp(0.75rem, 1.3vw, 0.9rem);
+        font-weight: normal;
+        margin: 4px 0 0;
+    }
+
+    /* ── LANGUAGES ── */
+    .languages {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .languages button {
+        padding: 8px 18px;
+        font-size: 0.88rem;
+
+        border: 2px solid rgb(79, 32, 114);
+        background: white;
+        color: rgb(79, 32, 114);
+        cursor: pointer;
+        transition: background 0.3s, color 0.3s;
+        height: auto;
+        width: auto;
+        margin: 0;
+    }
+
+    .languages button:hover {
+        background-color: rgb(79, 32, 114);
+        color: white;
+    }
+
+    /* ── CONTACT SECTION ── */
+    .contact {
+        text-align: center;
+        padding: 9px 20px 80px;
+        margin-top: 23px;
+    }
+
+    .contact h1 {
+        font-size: 269x;
+        margin-bottom: 8px;
+    }
+
+    .contact-text {
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 10px;
+    }
+
+    .contact-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 28px;
+        margin-top: 36px;
+    }
+
+    .contact-card {
+        background: #fff;
+        width: 240px;
+        height: 113px;
+        padding: 32px 20px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s, transform 0.3s;
+    }
+
+    .contact-card:hover {
+        box-shadow: 0 8px 22px rgba(255, 174, 187, 0.7);
+        transform: translateY(-4px);
+    }
+
+    .contact-card i {
+        font-size: 2rem;
+        color: #ff6fa3;
+        margin-bottom: 10px;
+    }
+
+    .contact-card h3 {
+        font-size: 1.1rem;
+        margin: 8px 0 6px;
+        color: rgb(79, 32, 114);
+        margin-top: 12px;
+    }
+
+    .contact-card p {
+        font-size: 0.88rem;
+        color: #555;
+        margin: 0;
+        word-break: break-word;
+        margin-top: 17px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+        .hero {
+            flex-direction: column;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .icon {
+            justify-content: center;
+        }
+
+        .about {
+            padding: 40px 20px;
+            margin: 40px 16px;
+        }
+
+        .about-inner {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .stats {
+            justify-content: center;
+        }
+
+        .languages {
+            justify-content: center;
+        }
+    }
+</style>
 
 <body>
-
     <!-- NAVBAR -->
     <nav class="navbar">
-        <a href="#" class="logo">Portfolio</a>
-        <ul>
-            <li><button><a href="index.html">About me</a></button></li>
-            <li><button><a href="projects.html">Projects</a></button></li>
-            <li><button><a href="#contact">Contacts</a></button></li>
-        </ul>
+        <a href="index.html" class="logo">Portfolio</a>
+        <div class="nav-links">
+            <button><a href="index.html">About me</a></button></li>
+            <button><a href="projects.html">Projects</a></button></li>
+            <button><a href="index.html#contact">Contacts</a></button></li>
+        </div>
     </nav>
 
     <!-- HERO / INTRO -->
@@ -380,12 +382,13 @@
         <img class="pic" src="pics/pic.jpeg" alt="Ayesha Ramzan">
         <div class="intro-text">
             <h1>I'm Ayesha Ramzan 👋</h1>
-            <h1>Tech Enthusiast | Builder | Explorer</h1>
+            <h3 style="font-size: 22px; margin-top: -2px;">Tech Enthusiast | Builder | Design</h3>
             <p>
-                🌷 I am a BSCS student passionate about technology, creativity, and building
-                meaningful digital experiences. I love learning new skills, solving problems,
-                and improving my work step by step. My portfolio reflects my journey as a
-                learner, coder, and future developer. 🌷
+                🌷 Hi, I'm Ayesha, a BS Computer Science student with a passion for coding and web development. I enjoy
+                creating projects that combine creativity and problem-solving to build real-world solutions. Through
+                this portfolio, I showcase my work, projects, and growth as a developer. My goal is to contribute to
+                innovative and impactful tech solutions while continuing to learn and evolve in the world of
+                programming. 🌷
             </p>
             <div class="icon">
                 <a href="https://pk.linkedin.com/company/kinnaird-college-for-women" target="_blank">
@@ -440,36 +443,36 @@
                     <button>🗣️ Languages:</button>
                     <button>English</button>
                     <button>Urdu</button>
-                    <button>Spanish</button>
                 </div>
             </div>
         </div>
     </section>
+    <hr>
 
     <!-- CONTACT -->
-     
+
     <section class="contact" id="contact">
         <h1>Contact Me</h1>
-       
+
         <p class="contact-text">Feel free to reach out anytime 💌</p>
         <div class="contact-cards">
 
             <div class="contact-card">
-                <i class="fa-solid fa-phone"></i>
+                <i class="fa fa-phone"></i>
                 <h3>Phone</h3>
                 <p><a href="tel:+923094876767">+92 309 4876767</a></p>
             </div>
 
             <div class="contact-card">
-                <i class="fa-solid fa-envelope"></i>
+                <i class="fa fa-envelope"></i>
                 <h3>Email</h3>
-                <p><a style="font-size: 13px;"  href="mailto:ayesharamzan889@gmail.com">ayesharamzan889@gmail.com</a></p>
+                <p><a style="font-size: 13px;" href="mailto:ayesharamzan889@gmail.com">ayesharamzan889@gmail.com</a></p>
             </div>
 
             <div class="contact-card">
-                <i class="fa-brands fa-github"></i>
+                <i class="fa fa-github"></i>
                 <h3>Instagram</h3>
-                <p><a href="https://github.com/techbyayesha" target="_blank">techbyayesha</a></p>
+                <p><a href="https://github.com/ayesharamzan46" target="_blank">Ayesha Ramzan</a></p>
             </div>
 
         </div>
